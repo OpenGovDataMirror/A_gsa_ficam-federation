@@ -1,0 +1,113 @@
+# Site settings
+title: Federation Playbook
+name: Federation Playbook
+email: icam@gsa.gov
+author:
+    name: FICAM
+description: Federation Guidance
+highlighter: rouge
+repo_url: https://github.com/GSA/ficam-federation
+baseurl: '/ficam-federation'
+branch: federalist-pages
+
+# Federalist overwrites the site.branch value when deploying
+# the site.branch was used in dynamic link generation for objects like Edit Page
+# we want the dynamic links to send users to the staging branch.  Adding new site variable to ensure federalist doesn't overwrite.
+editbranch: staging
+
+# Links
+# List links that you would like to appear on the top navigation bar here
+navbar:
+- title: IDmanagement.gov
+  description: Idmanagement.gov
+  url: https://www.idmanagement.gov
+- title: Federal ICAM Architecture
+  description: Federal ICAM Architecture
+  url: https://arch.idmanagement.gov
+- title: PIV Guides
+  description: PIV Guides
+  url: https://piv.idmanagement.gov
+- title: Federal PKI Guides
+  description: Federal PKI Guides
+  url: https://fpki.idmanagement.gov
+
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+- bin
+- config.rb
+- Gemfile
+- Gemfile.lock
+- gems
+- Procfile
+- Rakefile
+- README.md
+- script
+- vendor
+
+navigation:
+- text: What is Federation
+  url: ''
+  internal: true
+  coll: false
+- text: How Does Federation Work
+  url: howfederationwork
+  internal: true
+  coll: false
+- text: Plan
+  url: plan/
+  internal: true
+  coll: true
+  collname: plan
+- text: Design
+  url: design/
+  internal: true
+  coll: true
+  collname: design
+- text: Build
+  url: build/
+  internal: true
+  coll: true
+  collname: build
+#- text: Maintain
+#  url: maintain/
+#  internal: true
+#  coll: true
+#  collname: maintain
+- text: Case Study
+  url: casestudy
+  internal: true
+  coll: false
+- text: Contribute
+  url: contribute
+  internal: true
+  coll: false
+include:
+- _stylesheets
+- _javascript
+
+collections:
+  plan:
+    label: "Plan"
+    permalink: /plan/:path/
+    output: true
+  design:
+    label: "Design"
+    permalink: /design/:path/
+    output: true
+  build:
+    label: "Build"
+    permalink: /build/:path/
+    output: true
+  maintain:
+    label: "Maintain"
+    permalink: /maintain/:path/
+    output: true
+# Custom site configuration
+lang: en
